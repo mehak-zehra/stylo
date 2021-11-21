@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.category-img {
+  height: 40rem;
+  width: 30rem;
+}
+
+footer {
+  background-color: #000C66;
+  color: whitesmoke;
+}
+
+.logo {
+  font-family: 'Monoton', cursive;
+  font-size: 50px;
+  /* font-weight: bold; */
+}
+
+.secondary-label {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 50px;
+}
+
+nav {
+  background-color: #000C66 !important;
+}
+
+.purple{
+  color: #7c2e84 !important;
+  font-weight: 600;
+}
+
+.footer-list {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.rounded {
+  border-radius: 45px !important;
+}
+
+.centered {
+  align-items: center;
+}
+
+.login-btn, .signup-btn {
+  font-size: 15px;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.homepage-jumbo {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.1)), url("http://www.thetimelessgentleman.com/wp-content/uploads/2021/01/prime-wardrobe-amazon-review.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 72vh;
+  color: white;
+}
+ .headline {
+   font-size: 80px;
+ }
+
+ .learn-more-btn {
+  background-color: #000C66 !important;
+  color: white
+ }
+/* .dress-icon {
+  list-style-image: url('./assets/icons8-costume-64.png');
+} */
+
+.form-div {
+  border-style: solid;
+  border-radius: 45px;
+}
+
+.dots {
+  margin-top: -45px !important;
+}
+
+.page {
+  min-height: 60vh;
+}
+
+.select-btn {
+  background-color: #1ce4bc;
+  color: white;
+}
+
+.confirm-title {
+  font-family: 'Fredericka the Great', cursive;
+  color: black; 
+}
