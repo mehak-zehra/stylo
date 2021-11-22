@@ -1,76 +1,86 @@
 import React, { useState } from 'react';
+import { CREATE_USER } from '../utils/mutations';
+import { useStoreContext } from "../utils/GlobalState";
 import { useMutation } from '@apollo/client';
-
-// import Auth from '../server/utils/auth';
-// import { ADD_USER } from '../server/utils/mutations';
+import { UPDATE_USER } from '../utils/actions';
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Signup(props) {
-    const [formState, setFormState] = useState({ email: '', password: '',
-    firstName: '',
-    lastName: '',
-    address: '',
-    state: '',
-    zipCode: '' });
-
-    // const [addUser] = useMutation(ADD_USER);
+    let history = useHistory();
+    const [formState, setFormState] = useState({
+        email: '', password: '',
+        firstName: '',
+        lastName: '',
+        address: '',
+        state: '',
+        zipCode: ''
+    });
+    const [_, dispatch] = useStoreContext();
+    const [signUp, { error }] = useMutation(CREATE_USER);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        // const mutationResponse = await addUser({
-        //   variables: {
-        //     email: formState.email,
-        //     password: formState.password,
-        //     firstName: formState.firstName,
-        //     lastName: formState.lastName,
-        //     address: formState.address,
-        //     state: formState.state,
-        //     zipCode: formState.zipCode
-        //   },
-        // });
-        // console.log("after mute")
-        // const token = mutationResponse.data.addUser.token;
-        // Auth.login(token);
-      };
 
-      const handleChange = (event) => {
+        try {
+            const mutationResponse = await signUp({
+                variables: { email: formState.email, password: formState.password, firstName: formState.firstName, lastName: formState.lastName, address: formState.address, state: formState.state, zipCode: formState.zipCode },
+            });
+            const user = mutationResponse.data.createUser;
+
+            dispatch({
+                type: UPDATE_USER,
+                user: {
+                    ...user,
+                    isLoggedIn: true,
+
+                }
+            });
+            history.push('/home')
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+    const handleChange = (event) => {
         const { name, value } = event.target;
         setFormState({
-          ...formState,
-          [name]: value,
+            ...formState,
+            [name]: value,
         });
-      };
+    };
     return (
         <div className="page container">
             <h3 className="secondary-label mt-2">signup</h3>
 
             <form onSubmit={handleFormSubmit}>
                 <div className="form-group m-0">
-                    <input type="email" className="rounded form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"  onChange={handleChange}/>
+                    <input type="email" name="email" className="rounded form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" onChange={handleChange} />
                 </div>
                 <div className="form-group m-0 pt-3">
-                    <input type="password" className="rounded form-control" id="exampleInputPassword1" placeholder="Password" onChange={handleChange} />
+                    <input type="password" name="password" className="rounded form-control" id="exampleInputPassword1" placeholder="Password" onChange={handleChange} />
                 </div>
                 <div className="form-row m-0 pt-3">
                     <div className="form-group col-md-6 p-0">
-                        <input type="firstName" className="rounded form-control" id="first-name" placeholder="First Name" onChange={handleChange} />
+                        <input name="firstName" className="rounded form-control" id="first-name" placeholder="First Name" onChange={handleChange} />
                     </div>
                     <div className="form-group col-md-6">
-                        <input type="lastName" className="rounded form-control" id="last-name" placeholder="Last Name" onChange={handleChange} />
+                        <input name="lastName" className="rounded form-control" id="last-name" placeholder="Last Name" onChange={handleChange} />
                     </div>
                 </div>
 
                 <div className="form-group">
-                    <input type="text" className="form-control rounded" id="inputAddress" placeholder="Enter Address" onChange={handleChange} />
+                    <input type="text" className="form-control rounded" name="address" id="inputAddress" placeholder="Enter Address" onChange={handleChange} />
                 </div>
                 <div className="form-row">
                     <div className="form-group col-md-6">
-                        <input type="text" className="form-control rounded" id="inputCity" placeholder="Enter City" onChange={handleChange} />
+                        <input type="text" className="form-control rounded" name="city" id="inputCity" placeholder="Enter City" onChange={handleChange} />
                     </div>
                     <div className="form-group col-md-4">
-                        <input type="text" className="form-control rounded" id="inputState" placeholder="Enter State" onChange={handleChange} />
+                        <input type="text" className="form-control rounded" name="state" id="inputState" placeholder="Enter State" onChange={handleChange} />
                     </div>
                     <div className="form-group col-md-2">
-                        <input type="text" className="form-control rounded" id="inputZip" placeholder="Enter Zip" onChange={handleChange} />
+                        <input type="text" className="form-control rounded" name="zipCode" id="inputZip" placeholder="Enter Zip" onChange={handleChange} />
                     </div>
                 </div>
 
@@ -102,9 +112,9 @@ function Signup(props) {
                 </div>
                 <div className="centered">
                     <button type="submit" className="btn btn-dark btn-lg rounded pl-4 pr-4 signup-btn">Sign up</button>
-                    <a className="ml-4" href="/login">Already have an account? Click here to login</a>
+                    <Link className="ml-4" to="/login">Already have an account? Click here to login</Link>
                 </div>
-                
+
             </form>
         </div>
     )

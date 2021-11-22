@@ -1,21 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
-        <footer className="mt-5">
+        <footer className="">
             <div className="container pb-2 pt-2">
                 <div className="row mt-3">
                     <div className="col-md-2 pb-3">
                         <h5 className="font-weight-bold">Company</h5>
                         <ul className="footer-list p-0" >
                             <li >
-                                <a>About</a>
+                                <Link className="text-white" href="/">About</Link>
                             </li>
                             <li >
-                                <a>Contact</a>
+                                <Link className="text-white" href="/">Contact</Link>
                             </li>
                             <li >
-                                <a>Career</a>
+                                <Link className="text-white" href="/">Career</Link>
                             </li>
                         </ul>
                     </div>
@@ -23,16 +24,16 @@ function Footer() {
                         <h5 className="font-weight-bold">Help</h5>
                         <ul className="footer-list p-0" >
                             <li >
-                                <a>FAQs</a>
+                                <Link className="text-white" href="/">FAQs</Link>
                             </li>
                             <li >
-                                <a>How it works</a>
+                                <Link className="text-white" href="/">How it works</Link>
                             </li>
                             <li >
-                                <a>Shipping</a>
+                                <Link className="text-white" href="/">Shipping</Link>
                             </li>
                             <li >
-                                <a>Privacy</a>
+                                <Link className="text-white" href="/">Privacy</Link>
                             </li>
                         </ul>
                     </div>
@@ -62,7 +63,7 @@ function Footer() {
                         <div className="text-center mt-2 mb-2">
                             &copy; 2022 Stylo, Inc.
                         </div>
-                        
+
                     </div>
                 </div>
 
