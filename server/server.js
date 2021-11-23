@@ -20,7 +20,7 @@ const startServer = async () => {
 
     server.applyMiddleware({ app });
 
-    await mongoose.connect('mongodb+srv://dbUser:pass1234@cluster0.qajod.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://dbUser:pass1234@cluster0.qajod.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
@@ -28,8 +28,11 @@ const startServer = async () => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
 
+    if (process.env.NODE_ENV === 'production') {
+        app.use(express.static(path.join(__dirname, '../client/build')));
+    }
     app.listen({ port: PORT }, () =>
-        console.log(`server ready at http://localhost:4000${server.graphqlPath}`)
+        console.log(`server ready at http://localhost:${PORT}${server.graphqlPath}`)
     );
 }
 
