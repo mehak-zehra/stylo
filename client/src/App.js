@@ -10,7 +10,7 @@ import WomenCatalog from './pages/WomenCatalog';
 import Checkout from './pages/Checkout';
 import ConfirmationPage from './pages/Confirmation';
 import { StoreProvider } from "./utils/GlobalState.js";
-import MenCatalog from './pages/ MenCatalog';
+import MenCatalog from './pages/MenCatalog';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {

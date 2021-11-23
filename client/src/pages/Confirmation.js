@@ -20,6 +20,7 @@ export default class ConfirmationPage extends React.Component {
         this.isAnimationEnabled = false;
         this.animationInstance = null;
         this.intervalId = null;
+        this.type = JSON.parse(localStorage.getItem("cart")).type;
     }
 
     getAnimationSettings(originXA, originXB) {
@@ -91,7 +92,8 @@ export default class ConfirmationPage extends React.Component {
             <div className="page">
                 <div className="container-fluid">
                     <div className="jumbotron confirm-jumbo mt-5">
-                        <h1 className="display-2 confirm-title">Congratulations! You have booked the subscription</h1>
+                        <h1 className="display-2 confirm-title">Congratulations!</h1>
+                        <h1 className="display-4 confirm-title">We have booked your {this.type} Subscription</h1>
                         <p className="lead">Your confirmation ID is XXXXXXXXX</p>
                         <ReactCanvasConfetti refConfetti={this.getInstance} style={canvasStyles} />
                     </div>
