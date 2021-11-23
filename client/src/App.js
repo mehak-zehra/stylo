@@ -23,7 +23,8 @@ import { setContext } from '@apollo/client/link/context';
 const PORT = process.env.PORT || 4000;
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: `/graphql`,
+  // uri: `http://localhost:${PORT}/graphql`,
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -54,13 +55,13 @@ function App() {
               <Nav />
               <Switch>
                 <Route exact path="/" component={Splash} />
-                <Route exact path="/home" component={Homepage} />
-                <Route exact path="/signup" component={Signup} />
-                <Route exact path="/login" component={Login} />
+                <Route path="/home" component={Homepage} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/login" component={Login} />
                 <Route exact path="/catalog-women" component={WomenCatalog} />
-                <Route exact path="/proceed-to-checkout" component={Checkout} />
-                <Route exact path="/pay" component={Payment} />
-                <Route exact path="/confirmation" component={ConfirmationPage} />
+                <Route path="/proceed-to-checkout" component={Checkout} />
+                <Route path="/pay" component={Payment} />
+                <Route path="/confirmation" component={ConfirmationPage} />
               </Switch>
               <Footer />
             </StoreProvider>

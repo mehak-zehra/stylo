@@ -65,5 +65,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+  // use client-side test api key
+  var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+  // immediately redirect to stripe using your checkout session
+  // stripe.redirectToCheckout({
+  //   sessionId: 'cs_test_a1YS9FLogCL6G23B9oWSR2a3Qus9SmR6SFFJ9PsYk4kU4hIZbwIZCaINaj'
+  // });
+</script>
 
 </html>
