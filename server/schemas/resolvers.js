@@ -21,8 +21,8 @@ const resolvers = {
     },
 
     Mutation: {
-        createUser: async (parent, { firstName, lastName, email, password, address, state, zipCode }) => {
-            const user = new User({ firstName, lastName, email, password, address, state, zipCode })
+        createUser: async (parent, { firstName, lastName, email, password, address, city, state, zipCode }) => {
+            const user = new User({ firstName, lastName, email, password, address, city, state, zipCode })
             await user.save();
             console.log(user.firstName);
             return user;

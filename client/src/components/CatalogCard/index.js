@@ -9,11 +9,9 @@ function CatalogCard(props) {
     const [state, dispatch] = useStoreContext();
 
     function handleClick() {
-        let oldCart = state.cart;
-        let newCart = oldCart.push(props.product)
         dispatch({
             type: ADD_TO_CART,
-            cart: newCart
+            cart: props.product
         });
         history.push('/proceed-to-checkout')
     }
@@ -30,7 +28,7 @@ function CatalogCard(props) {
                         </div>
                         <div className="col-md-3">
                             <div className="float-right">
-                                <span className="font-weight-bold">$</span><span className="price">{props.product.price.dollar}</span><span>.{props.product.price.cents}</span>
+                                {/* <span className="font-weight-bold">$</span><span className="price">{props.product.price}</span> */}
                             </div>
                         </div>
                     </div>
@@ -44,18 +42,26 @@ function CatalogCard(props) {
                                         <li><span className="font-weight-bold">{item.quantity}X</span> {item.name}</li>
                                     ))}
                                 </ul>
-                                {/* <Link to="/proceed-to-checkout"> */}
-                                <button className="btn select-btn pl-4 pr-4 rounded" onClick={handleClick}>Select this package</button>
-                                {/* </Link> */}
+                                {/* <button className="btn select-btn pl-4 pr-4 rounded" onClick={handleClick}>Select this package</button> */}
                             </div>
                         </div>
-                        <div className="col-md-3 text-center">
+                        <div className="col-md-4 text-center">
                             <div>
-                                <img className="mt-2" src={Box} alt="giftbox for this months items" />
+                                <img className="mt-2" src={Box} alt="giftbox for this months items" onClick={() => { }} />
                             </div>
                             <div>
-                                <p className="lead p-0 m-0"><small className="text-muted">What is new this month?</small></p>
-                                <p className="lead p-0 m-0"><small className="text-muted">Click on the giftbox</small></p>
+                                <p className="lead p-0 m-0"><small className="text-muted">What's new this month?</small></p>
+                                {/* <p className="lead p-0 m-0"><small className="text-muted">Click on the giftbox</small></p> */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-8">
+                            <button className="btn select-btn pl-4 pr-4 rounded" onClick={handleClick}>Select this package</button>
+                        </div>
+                        <div className="col-md-4 text-center">
+                            <div>
+                                <span className="font-weight-bold">$</span><span className="price">{props.product.price}</span>
                             </div>
                         </div>
                     </div>

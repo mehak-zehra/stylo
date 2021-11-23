@@ -13,6 +13,7 @@ function Signup(props) {
         firstName: '',
         lastName: '',
         address: '',
+        city: '',
         state: '',
         zipCode: ''
     });
@@ -24,7 +25,7 @@ function Signup(props) {
 
         try {
             const mutationResponse = await signUp({
-                variables: { email: formState.email, password: formState.password, firstName: formState.firstName, lastName: formState.lastName, address: formState.address, state: formState.state, zipCode: formState.zipCode },
+                variables: { email: formState.email, password: formState.password, firstName: formState.firstName, lastName: formState.lastName, address: formState.address, city: formState.city, state: formState.state, zipCode: formState.zipCode },
             });
             const user = mutationResponse.data.createUser;
 

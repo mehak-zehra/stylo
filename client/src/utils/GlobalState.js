@@ -9,7 +9,7 @@ const StoreProvider = ({ value = [], ...props }) => {
         user: {
             isLoggedIn: false
         },
-        cart: []
+        cart: {}
     });
     // use this to confirm it works!
     console.log(state);

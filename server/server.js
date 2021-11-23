@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const resolvers = require('./schemas/resolvers');
 const typeDefs = require('./schemas/typeDefs')
 const { authMiddleware } = require('./utils/auth');
+const PORT = process.env.PORT || 4000;
 
 const startServer = async () => {
     const app = express();
@@ -27,7 +28,7 @@ const startServer = async () => {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
 
-    app.listen({ port: 4000 }, () =>
+    app.listen({ port: PORT }, () =>
         console.log(`server ready at http://localhost:4000${server.graphqlPath}`)
     );
 }

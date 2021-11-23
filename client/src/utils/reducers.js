@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 
 import {
-    UPDATE_USER,
+    UPDATE_USER, ADD_TO_CART
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -11,6 +11,11 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 user: action.user
+            }
+        case ADD_TO_CART:
+            return {
+                ...state,
+                cart: action.cart
             }
         default:
             return state;

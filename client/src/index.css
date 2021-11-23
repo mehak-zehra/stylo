@@ -118,3 +118,8 @@ nav {
 .confirm-jumbo {
   background-color: transparent;
 }
+
+.cart-size {
+  font-size: 30px;
+  font-family: 'Fredericka the Great', cursive;
+}
