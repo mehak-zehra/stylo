@@ -26,6 +26,16 @@ export const CREATE_USER = gql`
       city
       state
       zipCode
+    }
   }
-}
+`
+
+export const CREATE_STRIPE_SESSION_ID = gql`
+  mutation getCheckoutSessionId($productName: String!, $priceAmount: String!, $productDescription: String!) {
+    getCheckoutSessionId(
+      productName: $productName
+      priceAmount: $priceAmount
+      productDescription: $productDescription
+    )
+  }
 `

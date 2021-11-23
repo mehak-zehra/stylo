@@ -18,10 +18,10 @@ const typeDefs = gql`
         zipCode: String
     }
 
-
     type Mutation {
         createUser(firstName: String!, lastName: String!, email: String! password: String!, address: String, city: String, state: String, zipCode: String): User!
         login(email: String!, password: String!): User
+        getCheckoutSessionId(productName: String!, productDescription: String!, priceAmount: String): String!
     }
 `;
 

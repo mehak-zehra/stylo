@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
-// import { useMutation } from '@apollo/client';
 import UserIcon from '../assets/icons8-user-96.png';
 // import AddressIcon from '../assets/icons8-home-96.png';
 import CartIcon from '../assets/icons8-cart-96.png';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { useStoreContext } from "../utils/GlobalState";
 import CartIcon1 from '../assets/cart-1.png';
-import CartIcon2 from '../assets/cart-2.png';
+import { useMutation } from '@apollo/client';
+import { CREATE_STRIPE_SESSION_ID } from '../utils/mutations';
+import { loadStripe } from "@stripe/stripe-js";
 
 function Checkout(props) {
+    const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
     const [state] = useStoreContext();
 
     const [total, setTotal] = useState(0)
@@ -24,6 +27,27 @@ function Checkout(props) {
         setTaxes((0.09 * subtotal).toFixed(2))
         setTotal(subtotal + parseFloat(taxes))
     })
+
+    const [createSessionId, { error }] = useMutation(CREATE_STRIPE_SESSION_ID);
+    const handleProceedToCheckout = async (event) => {
+        try {
+            const price = state.cart.price * 100
+            const mutationResponse = await createSessionId({
+                variables: { productName: productName, productDescription: state.cart.description, priceAmount: `${price}` },
+            });
+            const sessionId = mutationResponse.data.getCheckoutSessionId;
+            console.log(sessionId)
+
+            if (mutationResponse.data) {
+                stripePromise.then((res) => {
+                    res.redirectToCheckout({ sessionId: sessionId });
+                });
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     return (
         (!state.user.isLoggedIn ? <Redirect to="/signup" /> :
             <div className="page">
@@ -66,7 +90,7 @@ function Checkout(props) {
                                 <li className="list-group-item"><span className="font-weight-bold">Subtotal: $</span>{subtotal}</li>
                                 <li className="list-group-item"><span className="font-weight-bold">Taxes: $</span>{taxes}</li>
                                 <li className="list-group-item"><span className="font-weight-bold">TOTAL: $</span>{total}</li>
-                                <li className="list-group-item"><Link to="/pay"><button className="btn text-white select-btn" >Proceed to Checkout</button></Link></li>
+                                <li className="list-group-item"><button className="btn text-white select-btn" onClick={handleProceedToCheckout}>Proceed to Checkout</button></li>
                             </ul>
                         </div>
                     </div>
