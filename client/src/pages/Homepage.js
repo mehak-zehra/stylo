@@ -14,7 +14,9 @@ function Homepage() {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <img className="category-img" src={DressMen} alt="" />
+                        <Link to="/catalog-men">
+                            <img className="category-img" src={DressMen} alt="" />
+                        </Link>
                         <h2 className="secondary-label">MEN</h2>
                     </div>
                     <div className="col">

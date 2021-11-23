@@ -62,6 +62,9 @@ nav {
 .price {
   font-size: 30px;
   font-weight: bolder;
+  /* font-family: 'Righteous', cursive; */
+  /* font-family: 'Abril Fatface', cursive; */
+  font-family: 'Poiret One', cursive;
 }
 
 .splash-page {
@@ -122,4 +125,25 @@ nav {
 .cart-size {
   font-size: 30px;
   font-family: 'Fredericka the Great', cursive;
+}
+
+/* code to make modal button transparent */
+.modal-btn {
+  background-color: transparent;
+  outline: none;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.modal-btn:hover {
+  background-color: white;
+}
+
+/* modal image css */
+.modal-img {
+  width: 200px;
+  height: 200px;
 }
