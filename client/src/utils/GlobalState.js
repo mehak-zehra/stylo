@@ -5,14 +5,30 @@ const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const StoreProvider = ({ value = [], ...props }) => {
-    const [state, dispatch] = useProductReducer({
-        user: {
+    let localUser = localStorage.getItem("user");
+    let localCart = localStorage.getItem("cart");
+
+    if (!localUser) {
+        localUser = {
             isLoggedIn: false
-        },
-        cart: {}
+        }
+    } else {
+        localUser = JSON.parse(localUser)
+    }
+
+    if (!localCart) {
+        localCart = {}
+    } else {
+        localCart = JSON.parse(localCart)
+    }
+
+    const [state, dispatch] = useProductReducer({
+        user: localUser,
+        cart: localCart
     });
+
     // use this to confirm it works!
-    console.log(state);
+    // console.log(state);
     return <Provider value={[state, dispatch]} {...props} />;
 };
 
