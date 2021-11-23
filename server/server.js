@@ -21,7 +21,7 @@ const startServer = async () => {
 
     server.applyMiddleware({ app });
 
-    await mongoose.connect('mongodb+srv://dbUser:pass1234@cluster0.qajod.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://dbUser:pass1234@cluster0.qajod.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
