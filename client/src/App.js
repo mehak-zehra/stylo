@@ -20,9 +20,10 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+const PORT = process.env.PORT || 4000;
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: `http://localhost:${PORT}/graphql`,
 });
 
 const authLink = setContext((_, { headers }) => {
