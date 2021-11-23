@@ -2,30 +2,30 @@ const catalog = [
     {
         id: 1,
         category: "women",
-        title: "Formal",
-        type: "quarterly",
-        description: "This is the description of the formal package for women",
-        image_url: "https://media.istockphoto.com/photos/polka-dot-summer-brown-dress-suede-wedge-sandals-eco-straw-tote-bag-picture-id1208148708?k=20&m=1208148708&s=612x612&w=0&h=rjZiAPCOpwREiTET21lTP3wM30BUqAG9PjocC-euJ98=",
+        title: "Casual",
+        type: "Monthly",
+        description: "This is the basic package for women clothing who are looking for casual clothes, and like to keep up with the latest trends",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_casual_monthly.jpeg",
         items: [
             { name: "Dress", quantity: 2 },
-            { name: "Matching Bag", quantity: 2 },
-            { name: "Shoes", quantity: 2 },
+            { name: "Matching Bag", quantity: 1 },
+            { name: "Shoes", quantity: 1 },
             { name: "Scarf", quantity: 2 },
         ],
-        price: 299.99
+        price: 49.99
     },
     {
         id: 2,
         category: "women",
-        title: "Business",
-        type: "monthly",
-        description: "This is the description of the formal package for women",
-        image_url: "https://us.123rf.com/450wm/newdesignillustrations/newdesignillustrations1902/newdesignillustrations190211443/125451487-not-available-stamp-seal-watermark-with-distress-style-blue-vector-rubber-print-of-not-available-tex.jpg?ver=6",
+        title: "Casual",
+        type: "Quarterly",
+        description: "This is the basic package for woman clothing for those who are looking for casual clothes, but don't find shopping interesting",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_casual_quarterly.jpeg",
         items: [
-            { name: "Dress", quantity: 2 },
-            { name: "Matching Bag", quantity: 2 },
-            { name: "Shoes", quantity: 2 },
-            { name: "Scarf", quantity: 2 },
+            { name: "Dress", quantity: 5 },
+            { name: "Matching Bag", quantity: 3 },
+            { name: "Shoes", quantity: 3 },
+            { name: "Scarf", quantity: 6 },
         ],
         price: 199.99
     },
@@ -33,17 +33,107 @@ const catalog = [
         id: 3,
         category: "women",
         title: "Casual",
-        type: "annual",
-        description: "This is the description of the formal package for women",
-        image_url: "https://us.123rf.com/450wm/newdesignillustrations/newdesignillustrations1902/newdesignillustrations190211443/125451487-not-available-stamp-seal-watermark-with-distress-style-blue-vector-rubber-print-of-not-available-tex.jpg?ver=6",
+        type: "Annual",
+        description: "This is the basic package for women who wear casual clothes but have no style. Don't worry, we are were to help!",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_casual_annual.jpeg",
+        items: [
+            { name: "Dress", quantity: 10 },
+            { name: "Matching Bag", quantity: 5 },
+            { name: "Shoes", quantity: 6 },
+            { name: "Scarf", quantity: 10 },
+        ],
+        price: 499.99
+    },
+    {
+        id: 4,
+        category: "women",
+        title: "Business",
+        type: "Monthly",
+        description: "This is the business package for women looking for professional clothes, and need to look their best",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_business_monthly.jpeg",
         items: [
             { name: "Dress", quantity: 2 },
-            { name: "Matching Bag", quantity: 2 },
-            { name: "Shoes", quantity: 2 },
+            { name: "Matching Bag", quantity: 1 },
+            { name: "Shoes", quantity: 1 },
             { name: "Scarf", quantity: 2 },
         ],
-        price: 99.99
-    }
+        price: 49.99
+    },
+    {
+        id: 5,
+        category: "women",
+        title: "Business",
+        type: "Quarterly",
+        description: "This is the business package for those who are looking for the average individual looking to new work clothes",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_business_quarterly.jpeg",
+        items: [
+            { name: "Dress", quantity: 5 },
+            { name: "Matching Bag", quantity: 3 },
+            { name: "Shoes", quantity: 3 },
+            { name: "Scarf", quantity: 6 },
+        ],
+        price: 199.99
+    },
+    {
+        id: 6,
+        category: "women",
+        title: "Business",
+        type: "Annual",
+        description: "This is the business women package is perfect for those who are working from home but want to update their collection every year",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_business_annual.jpeg",
+        items: [
+            { name: "Dress", quantity: 10 },
+            { name: "Matching Bag", quantity: 5 },
+            { name: "Shoes", quantity: 6 },
+            { name: "Scarf", quantity: 10 },
+        ],
+        price: 499.99
+    },
+    {
+        id: 4,
+        category: "women",
+        title: "Formal",
+        type: "Monthly",
+        description: "This is the professional package for those who want to make a statement each and every month",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_formal_monthly.jpeg",
+        items: [
+            { name: "Dress", quantity: 2 },
+            { name: "Matching Bag", quantity: 1 },
+            { name: "Shoes", quantity: 1 },
+            { name: "Scarf", quantity: 2 },
+        ],
+        price: 49.99
+    },
+    {
+        id: 5,
+        category: "women",
+        title: "Formal",
+        type: "Quarterly",
+        description: "This is the professional package for those need to look stunning, and have events to attend every now and again",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_formal_quarterly.jpeg",
+        items: [
+            { name: "Dress", quantity: 5 },
+            { name: "Matching Bag", quantity: 3 },
+            { name: "Shoes", quantity: 3 },
+            { name: "Scarf", quantity: 6 },
+        ],
+        price: 199.99
+    },
+    {
+        id: 6,
+        category: "women",
+        title: "Formal",
+        type: "Annual",
+        description: "This is the professional women package is perfect for those who steal the show every time these step out of the house",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_formal_annual.jpeg",
+        items: [
+            { name: "Dress", quantity: 10 },
+            { name: "Matching Bag", quantity: 5 },
+            { name: "Shoes", quantity: 6 },
+            { name: "Scarf", quantity: 10 },
+        ],
+        price: 499.99
+    },
 ];
 
 export default catalog;

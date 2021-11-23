@@ -10,12 +10,14 @@ import CartIcon2 from '../assets/cart-2.png';
 
 function Checkout(props) {
     const [state] = useStoreContext();
-    const name = state.user.firstName + ' ' + state.user.lastName;
-    console.log(state.user)
-    const deliveryAddress = state.user.address + ', ' + state.user.city + ', ' + state.user.state + ' ' + state.user.zipCode
+
     const [total, setTotal] = useState(0)
     const [subtotal, setSubtotal] = useState(0)
     const [taxes, setTaxes] = useState(0)
+
+    const deliveryToName = state.user.firstName + ' ' + state.user.lastName;
+    const deliveryAddress = state.user.address + ', ' + state.user.city + ', ' + state.user.state + ' ' + state.user.zipCode
+    const productName = state.cart.title + ' ' + state.cart.type + ' Subscription'
 
     useEffect(() => {
         setSubtotal(state.cart.price)
@@ -34,7 +36,7 @@ function Checkout(props) {
                                 <div className="form-group row m-0">
                                     <label for="staticEmail" className="col-sm-2 col-form-label lead"><img src={UserIcon} width="30px" height="30px" alt="icon for name" /> Name</label>
                                     <div className="col-sm-10">
-                                        <input type="text" readOnly className="form-control-plaintext lead" id="staticEmail" value={name} />
+                                        <input type="text" readOnly className="form-control-plaintext lead" id="staticEmail" value={deliveryToName} />
                                     </div>
                                 </div>
                                 <div className="form-group row m-0">
@@ -52,7 +54,7 @@ function Checkout(props) {
                                 <div className="form-group row m-0">
                                     <label for="staticEmail" className="col-sm-2 col-form-label lead"><img src={CartIcon} width="30px" height="30px" alt="icon for cart" /> Items</label>
                                     <div className="col-sm-10">
-                                        <input type="text" readOnly className="form-control-plaintext lead" id="staticEmail" value={state.cart.title} />
+                                        <input type="text" readOnly className="form-control-plaintext lead" id="staticEmail" value={productName} />
                                     </div>
                                 </div>
                             </form>
@@ -60,7 +62,7 @@ function Checkout(props) {
                         <div className="col cart">
                             <ul className="list-group">
                                 <li className="list-group-item disabled font-weight-bold cart-size">cart <img src={CartIcon1} width="30px" height="30px" alt="icon for cart" /></li>
-                                <li className="list-group-item">{state.cart.title} {state.cart.type} Subscription</li>
+                                <li className="list-group-item">{productName}</li>
                                 <li className="list-group-item"><span className="font-weight-bold">Subtotal: $</span>{subtotal}</li>
                                 <li className="list-group-item"><span className="font-weight-bold">Taxes: $</span>{taxes}</li>
                                 <li className="list-group-item"><span className="font-weight-bold">TOTAL: $</span>{total}</li>

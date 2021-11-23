@@ -19,12 +19,12 @@ function CatalogCard(props) {
         <div className="card mb-3 p-2">
             <div className="row g-0 pb-2">
                 <div className="col-md-3 text-center">
-                    <img src={props.product.image_url} alt="product package that is available" className="img-fluid rounded-start" />
+                    <img src={props.product.image_url} alt="product package that is available" className="img-fluid rounded-start img-responsive w-100 h-100" />
                 </div>
                 <div className="col-md-9">
                     <div className="row">
                         <div className="col-md-8">
-                            <p className="lead card-title">{props.product.title} <small className="text-muted">per {props.product.type} subscription</small></p>
+                            <p className="lead card-title"><span className="font-weight-bold">{props.product.title}</span> <small className="text-muted text-lowercase">per {props.product.type} subscription</small></p>
                         </div>
                         <div className="col-md-3">
                             <div className="float-right">
