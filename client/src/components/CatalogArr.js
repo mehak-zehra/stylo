@@ -65,7 +65,7 @@ const catalog = [
         title: "Business",
         type: "Quarterly",
         description: "This is the business package for those who are looking for the average individual looking to new work clothes",
-        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_business_quarterly.jpeg",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_business_quarterly.png",
         items: [
             { name: "Dress", quantity: 5 },
             { name: "Matching Bag", quantity: 3 },
@@ -80,7 +80,7 @@ const catalog = [
         title: "Business",
         type: "Annual",
         description: "This is the business women package is perfect for those who are working from home but want to update their collection every year",
-        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_business_annual.jpeg",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_business_annual.png",
         items: [
             { name: "Dress", quantity: 10 },
             { name: "Matching Bag", quantity: 5 },
@@ -125,7 +125,7 @@ const catalog = [
         title: "Formal",
         type: "Annual",
         description: "This is the professional women package is perfect for those who steal the show every time these step out of the house",
-        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_formal_annual.jpeg",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_women_formal_annual..jpeg",
         items: [
             { name: "Dress", quantity: 10 },
             { name: "Matching Bag", quantity: 5 },

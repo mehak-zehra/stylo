@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactCanvasConfetti from 'react-canvas-confetti';
+import DeliveryTruck from '../assets/delivery-truck.gif';
 
 function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
@@ -94,7 +95,9 @@ export default class ConfirmationPage extends React.Component {
                     <div className="jumbotron confirm-jumbo mt-5">
                         <h1 className="display-2 confirm-title">Congratulations!</h1>
                         <h1 className="display-4 confirm-title">We have booked your {this.type} Subscription</h1>
-                        <p className="lead">Your confirmation ID is XXXXXXXXX</p>
+                        <p className="lead delivery-truck-size"><img src={DeliveryTruck} />  Your clothes are on you way! It typically takes us 7-14 business days to carefully style and pack up your Order.</p>
+                        <p className="lead">Your Order Id is <span className="order-id"> GF1253467XX </span> </p>
+                        <p className="lead">Check you email to track your status. For queries contact us on <span className="email-stylo">stylo_fashion@gmail.com</span></p>
                         <ReactCanvasConfetti refConfetti={this.getInstance} style={canvasStyles} />
                     </div>
                 </div>

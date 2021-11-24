@@ -147,3 +147,37 @@ nav {
   width: 200px;
   height: 200px;
 }
+
+.delivery-truck-size img {
+  width: 55px;
+  height: 55px;
+}
+
+.email-stylo {
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.order-id {
+  font-weight: bold;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.checkout-message {
+  font-size: 55px;
+  font-family: 'Fredericka the Great', cursive;
+}
+.checkout-message-child{
+  font-size: 36px;
+}
+
+#dropdown-basic-button {
+  background-color: #1ce4bc !important;
+  width: 159px;
+}
+
+.primary-color {
+  color: #1ce4bc;
+  font-weight: bold;
+}
