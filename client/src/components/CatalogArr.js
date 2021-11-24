@@ -134,6 +134,96 @@ const catalog = [
         ],
         price: 499.99
     },
+    {
+        id: 1,
+        category: "men",
+        title: "Casual",
+        type: "Monthly",
+        description: "This is the basic package for men clothing who are looking for casual clothes, and like to keep up with the latest trends",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_men_casual_monthly.jpeg",
+        items: [
+            { name: "Dress", quantity: 2 },
+            { name: "Watches", quantity: 1 },
+            { name: "Shoes", quantity: 1 },
+            { name: "Scarf", quantity: 2 },
+        ],
+        price: 49.99
+    },
+    {
+        id: 2,
+        category: "men",
+        title: "Casual",
+        type: "Quarterly",
+        description: "This is the basic package for men clothing for those who are looking for casual clothes, but don't find shopping interesting",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_men_casual_quarterly.jpeg",
+        items: [
+            { name: "Dress", quantity: 5 },
+            { name: "Watches", quantity: 3 },
+            { name: "Shoes", quantity: 3 },
+            { name: "Scarf", quantity: 6 },
+        ],
+        price: 199.99
+    },
+    {
+        id: 3,
+        category: "men",
+        title: "Casual",
+        type: "Annual",
+        description: "This is the basic package for men who wear casual clothes but have no style. Don't worry, we are were to help!",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_men_casual_annual.jpeg",
+        items: [
+            { name: "Dress", quantity: 10 },
+            { name: "Watches", quantity: 5 },
+            { name: "Shoes", quantity: 6 },
+            { name: "Scarf", quantity: 10 },
+        ],
+        price: 499.99
+    },
+    {
+        id: 4,
+        category: "men",
+        title: "Formal",
+        type: "Monthly",
+        description: "This is the professional package for those who want to make a statement each and every month",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_men_formal_montly.jpeg",
+        items: [
+            { name: "Dress", quantity: 2 },
+            { name: "Watches", quantity: 1 },
+            { name: "Shoes", quantity: 1 },
+            { name: "Scarf", quantity: 2 },
+        ],
+        price: 49.99
+    },
+    {
+        id: 5,
+        category: "men",
+        title: "Formal",
+        type: "Quarterly",
+        description: "This is the professional package for those need to look stunning, and have events to attend every now and again",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_men_formal_quarterly.jpeg",
+        items: [
+            { name: "Dress", quantity: 5 },
+            { name: "Watches", quantity: 3 },
+            { name: "Shoes", quantity: 3 },
+            { name: "Scarf", quantity: 6 },
+        ],
+        price: 199.99
+    },
+    {
+        id: 6,
+        category: "men",
+        title: "Formal",
+        type: "Annual",
+        description: "This is the professional men package is perfect for those who steal the show every time these step out of the house",
+        image_url: "https://mehak-file-service.herokuapp.com/file/stylo_men_formal_annual.jpeg",
+        items: [
+            { name: "Dress", quantity: 10 },
+            { name: "Watches", quantity: 5 },
+            { name: "Shoes", quantity: 6 },
+            { name: "Scarf", quantity: 10 },
+        ],
+        price: 499.99
+    },
 ];
 
 export default catalog;
