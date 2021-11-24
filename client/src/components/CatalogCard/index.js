@@ -7,6 +7,7 @@ import Dress1 from '../../assets/modal_dress_1.png'
 import Dress2 from '../../assets/modal_dress_2.png'
 import Shoes1 from '../../assets/modal_shoes_1.png'
 import Bag1 from '../../assets/modal_bag_1.png'
+import Bag2 from '../../assets/bag-business-modal.jpeg'
 
 function CatalogCard(props) {
     let history = useHistory();
@@ -72,7 +73,7 @@ function CatalogCard(props) {
                                             <div className="col-sm-3"><img className="modal-img" src={Shoes1} /></div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-sm-3"><img className="modal-img" src={Bag1} /></div>
+                                            <div className="col-sm-3"><img className="modal-img" src={Bag2} /></div>
                                         </div>
                                     </div>
                                 </div>

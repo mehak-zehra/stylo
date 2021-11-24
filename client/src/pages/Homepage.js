@@ -9,7 +9,7 @@ function Homepage() {
             <div className="container p-3">
                 <div className="row">
                     <div className="col">
-                        <h2 className="secondary-label">categories</h2>
+                        {/* <h2 className="secondary-label">categories</h2> */}
                     </div>
                 </div>
                 <div className="row">

@@ -6,7 +6,7 @@ function WomenCatalog() {
 
     return (
         <div className="page container">
-            <h3 className="secondary-label">available packages :</h3>
+            <h2 className="lead mt-2">available packages for women</h2>
             {Catalog.filter((product) => product.category == "women").map((product) => (
                 <CatalogCard product={product} />
             ))}
