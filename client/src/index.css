@@ -120,6 +120,7 @@ nav {
 .confirm-title {
   font-family: 'Fredericka the Great', cursive;
   color: black; 
+  font-size: 5rem;;
 }
 
 .confirm-jumbo {
@@ -184,4 +185,10 @@ nav {
 .primary-color {
   color: #1ce4bc;
   font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .confirm-title {
+    font-size: 3rem;
+  }
 }
